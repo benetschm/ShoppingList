@@ -1,27 +1,18 @@
-<html>
-    <head>
-      <title>ShoppingList/Items</title>
-    </head>
-    <body>
-      <div>
-        <h1><a href="">ShoppingList</a></h1>
-      </div>
-      <div>
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>Store Location</th>
-            <th>Home Location</th>
-          </tr>
-          {% for shoppingitem in shoppingitems %}
-          <tr>
-            <td>{{ shoppingitem.name }}</td>
-            <td>{{ shoppingitem.storelocation }}</td>
-            <td>{{ shoppingitem.homelocation }}</td>
-          </tr>
-          {% endfor %}
-        </table>
+{% extends 'ShoppingListApp/base.html' %}
 
-      </div>
-    </body>
-</html>
+{% block content %}
+  <table class="table table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Store Location</th>
+      <th>Home Location</th>
+    </tr>
+    {% for shoppingitem in shoppingitems %}
+    <tr>
+      <td>{{ shoppingitem.name }}</td>
+      <td>{{ shoppingitem.storelocation }}</td>
+      <td>{{ shoppingitem.homelocation }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
